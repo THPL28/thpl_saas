@@ -1,0 +1,91 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="background-color: #121212; color: white;">
+
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: #222;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #f0f0f0;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #1e90ff;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">THPL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'project_list' %}">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">Sobre</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'contact' %}">Contato </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container text-center mt-5" style="background-color: #191919;">
+        <h2>Entre em Contato</h2>
+        <p class="lead mt-3">
+            Ficou com alguma dúvida? Entre em contato comigo preenchendo o formulário abaixo.
+        </p>
+        
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.message.label_tag }}
+                        {{ form.message }}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Tiago Looze. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

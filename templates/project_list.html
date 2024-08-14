@@ -1,0 +1,17 @@
+{% extends 'projects/base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h1 class="my-4">Projects</h1>
+<div class="list-group">
+  {% for project in projects %}
+    <a href="{{ project.repository_url }}" class="list-group-item list-group-item-action">
+      <h5 class="mb-1">{{ project.name }}</h5>
+      <p class="mb-1">{{ project.description }}</p>
+      <small>Created on {{ project.created_at }}</small>
+    </a>
+  {% endfor %}
+</div>
+<a href="{% url 'add_project' %}" class="btn btn-primary mt-3">Add Project</a>
+{% endblock %}
