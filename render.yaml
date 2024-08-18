@@ -1,0 +1,12 @@
+# Exported from Render on 2024-08-18T08:24:58Z
+services:
+- type: web
+  name: thpl_saas
+  runtime: python
+  repo: https://github.com/THPL28/thpl_saas
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn thpl_saas.wsgi --log-file -
+  pullRequestPreviewsEnabled: false
+version: "1"

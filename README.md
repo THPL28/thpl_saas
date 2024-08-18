@@ -29,8 +29,8 @@ Este projeto é um portfólio SaaS desenvolvido com Django, mostrando meus proje
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/THPL28/thpl_site.git
-   cd thpl_site
+   git clone https://github.com/THPL28/thpl_sas.git
+   cd thpl_sas
 
 2.Crie e ative um ambiente virtual:
 
