@@ -99,7 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# settings.py
+# Host
+
+ALLOWED_HOSTS = ['.render.com']
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # ou o servidor SMTP que você usa

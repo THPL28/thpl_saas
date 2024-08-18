@@ -1,28 +1,77 @@
-# Portfólio THPL
+# THPL SaaS Portfolio
 
-Bem-vindo ao repositório do meu portfólio, que exibe diversos projetos e realizações desenvolvidos ao longo da minha carreira como desenvolvedor. Este projeto serve como um portfólio online para apresentar minhas habilidades, conhecimentos e trabalhos realizados.
+Este projeto é um portfólio SaaS desenvolvido com Django, mostrando meus projetos, habilidades e informações de contato. O objetivo é criar uma plataforma profissional para compartilhar meu trabalho com o mundo.
 
-## Descrição
+## Funcionalidades
 
-Este repositório contém o código fonte do meu site de portfólio pessoal, que inclui:
-
-- **Home Page:** Uma visão geral dos meus projetos e uma introdução ao meu trabalho.
-- **Projetos:** Uma lista detalhada dos projetos desenvolvidos, com links para cada repositório do GitHub.
-- **Sobre:** Uma página com informações sobre mim e minha trajetória profissional.
-- **Contato:** Um formulário para que você possa entrar em contato diretamente.
+- **Página Inicial:** Contém uma apresentação e detalhes sobre mim, junto com links para meus projetos e redes sociais.
+- **Projetos:** Uma lista de todos os projetos hospedados no meu GitHub, com descrições detalhadas.
+- **Sobre:** Uma página detalhando minhas habilidades, experiência e formação acadêmica.
+- **Contato:** Um formulário para entrar em contato comigo por e-mail.
 
 ## Tecnologias Utilizadas
 
-- **HTML/CSS:** Para o desenvolvimento da estrutura e estilo das páginas.
-- **Bootstrap:** Para o design responsivo e componentes pré-estilizados.
-- **Python/Django:** Para o backend e lógica de envio de emails.
-- **Git/GitHub:** Para controle de versão e hospedagem do código.
+- **Django:** Framework web usado para o desenvolvimento do backend.
+- **HTML/CSS/Bootstrap:** Usado para a construção das páginas front-end.
+- **Python:** Linguagem de programação principal do projeto.
+- **GitHub Pages:** Para hospedar a página inicial estática do portfólio.
 
-## Instalação
+## Configuração do Projeto
 
-Siga estes passos para rodar o projeto localmente:
+### Requisitos
 
-1. **Clone o Repositório:**
+- **Python 3.x**
+- **Django 4.x**
+- **Git**
+
+### Instalação
+
+1. Clone o repositório:
 
    ```bash
    git clone https://github.com/THPL28/thpl_site.git
+   cd thpl_site
+
+2.Crie e ative um ambiente virtual:
+
+   python -m venv venv
+   source venv/bin/activate  # Linux/macOS
+   .\venv\Scripts\activate   # Windows
+
+3.Instale as dependências:
+   pip install -r requirements.txt
+   
+4.Execute as migrações:
+   python manage.py migrate
+
+5.Inicie o servidor de desenvolvimento: 
+   python manage.py runserver
+
+6.Acesse o site no seu navegador em http://127.0.0.1:8000.
+
+
+## Configuração de Email
+Para habilitar o envio de e-mails pelo formulário de contato, configure as variáveis no arquivo settings.py:
+
+   EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+   EMAIL_HOST = 'smtp.gmail.com'
+   EMAIL_PORT = 587
+   EMAIL_USE_TLS = True
+   EMAIL_HOST_USER = 'seu_email@gmail.com'
+   EMAIL_HOST_PASSWORD = 'sua_senha'
+   DEFAULT_FROM_EMAIL = 'seu_email@gmail.com'
+   
+
+## Contato
+Email: thpldevweb@gmail.com
+
+LinkedIn: Tiago Looze
+
+GitHub: THPL28
+
+Licença
+
+Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+
+
