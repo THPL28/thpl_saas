@@ -14,7 +14,7 @@ Este projeto é um portfólio SaaS desenvolvido com Django, mostrando meus proje
 - **Django:** Framework web usado para o desenvolvimento do backend.
 - **HTML/CSS/Bootstrap:** Usado para a construção das páginas front-end.
 - **Python:** Linguagem de programação principal do projeto.
-- **GitHub Pages:** Para hospedar a página inicial estática do portfólio.
+
 
 ## Configuração do Projeto
 
