@@ -25,9 +25,6 @@ SECRET_KEY = 'django-insecure-d1b)gx-s5*0zxungbhjqp#jxln4ed-=p&faq9$=@4st3@vb!hi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://thpl-saas.onrender.com','thpl-saas.onrender.com','127.0.0.1','127.0.0.1:8000']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -101,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Host
 
-ALLOWED_HOSTS = ['.render.com']
+ALLOWED_HOSTS = ['https://thpl-saas.onrender.com','thpl-saas.onrender.com','127.0.0.1','127.0.0.1:8000']
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
