@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'thpl_saas.urls'
@@ -98,7 +99,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Host
 
+<<<<<<< Updated upstream
 ALLOWED_HOSTS = ['https://thpl-saas.onrender.com','thpl-saas.onrender.com','127.0.0.1','127.0.0.1:8000']
+=======
+ALLOWED_HOSTS = ['.render.com','127.0.0.1','127.0.0.1:8000']
+>>>>>>> Stashed changes
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -129,6 +134,14 @@ STATIC_URL = 'static/'
 
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
