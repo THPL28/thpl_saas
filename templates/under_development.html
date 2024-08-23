@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas em Desenvolvimento</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            background-color: #191919;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .page-item {
+            margin-bottom: 20px;
+        }
+        .page-item h3 {
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #222;">
+        <a class="navbar-brand" href="#">THPL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'project_list' %}">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">Sobre</a>
+                </li>
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'contact' %}">Contato</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'under_development' %}">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Páginas em Desenvolvimento</h2>
+        <p class="lead mt-3">Aqui estão algumas páginas que estão em desenvolvimento e ainda não estão disponíveis:</p>
+        <div class="page-item">
+            <h3>Contato</h3>
+            <p>Esta página está em desenvolvimento. Em breve, você poderá entrar em contato diretamente através deste formulário.</p>
+        </div>
+        <!-- Adicione mais páginas conforme necessário -->
+    </div>
+
+    <footer class="footer py-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Tiago Looze. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

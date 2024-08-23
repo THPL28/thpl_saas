@@ -23,12 +23,15 @@
         .navbar-brand, .nav-link {
             color: #f0f0f0;
         }
-
+        /* Estilo para o ícone do menu hambúrguer */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
         .navbar-brand:hover, .nav-link:hover {
             color: #1e90ff;
         }
 
-        .hero {
+        /* .hero {
             background-color: #222;
             padding: 50px 0;
             text-align: center;
@@ -50,7 +53,44 @@
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 0;
+        } */
+        .hero {
+            background: linear-gradient(rgba(90, 90, 90, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'images/background.jpg' %}") no-repeat center center;
+            background-size: cover;
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+            position: relative;
         }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
 
         .animated-title {
             font-size: 1.5rem;
@@ -87,7 +127,56 @@
             margin-bottom: 30px;
             color: #1e90ff;
         }
+        .skills-section {
+            background-color: #222;
+            padding: 40px 0;
+        }
 
+        .skills-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1e90ff;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .skill-card {
+            background-color: #333;
+            border: none;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+
+        .skill-title {
+            font-size: 1.25rem;
+            color: #f0f0f0;
+            margin-bottom: 5px;
+        }
+
+        .skill-description {
+            font-size: 0.9rem;
+            color: #ddd;
+        }
         .card {
             background-color: #333;
             border: none;
@@ -140,7 +229,8 @@
                     <a class="nav-link" href="{% url 'about' %}">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contato</a>
+                    <!-- <a class="nav-link" href="{% url 'contact' %}">Contato</a> -->
+                    <a class="nav-link" href="{% url 'under_development' %}">Contato</a>
                 </li>
             </ul>
         </div>
@@ -177,21 +267,61 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Automação RPA Python</h5>
-                        <p class="card-text">Especialista em automação de processos repetitivos utilizando RPA.</p>
+                        <p class="card-text">Automação de processos repetitivos utilizando Python RPA.<br></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Desenvolvimento de APIs RestFull (Fast Api)</h5>
-                        <p class="card-text">Criação de APIs para integração de sistemas e aplicativos.</p>
+                        <h5 class="card-title">Desenvolvimento de APIs Fast Api</h5>
+                        <p class="card-text">Criação de APIs para integração de sistemas e aplicativos.<br><br></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- Seção de Habilidades -->
+    <section class="skills-section container">
+        <h2>Minhas Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <div class="skill-title">Python</div>
+                <div class="skill-description">Desenvolvimento de aplicações robustas e eficientes.</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔄</div>
+                <div class="skill-title">Automação RPA</div>
+                <div class="skill-description">Automatização de processos repetitivos e manuais.</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔗</div>
+                <div class="skill-title">Desenvolvimento de APIs RestFull</div>
+                <div class="skill-description">Criação e integração de APIs para sistemas e aplicativos.</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-title">FastAPI</div>
+                <div class="skill-description">Desenvolvimento rápido e eficiente de APIs.</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <div class="skill-title">Desenvolvimento Web</div>
+                <div class="skill-description">Criação de sites e aplicações web interativas.</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🗃️</div>
+                <div class="skill-title">Análise de Dados</div>
+                <div class="skill-description">Analise, extração e manipulação de dados.</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔧</div>
+                <div class="skill-title">Git e GitHub</div>
+                <div class="skill-description">Controle de versão e colaboração em projetos.</div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="footer py-3 mt-5">
         <div class="container">

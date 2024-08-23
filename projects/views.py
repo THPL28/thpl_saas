@@ -31,6 +31,7 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -39,18 +40,21 @@ def contact_view(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
 
-            # Enviar o e-mail
+            # Enviar e-mail
             send_mail(
-                subject=f"Mensagem de {name}",
-                message=message,
-                from_email=email,
-                recipient_list=['seu_email@gmail.com'],  # Substitua pelo seu e-mail
+                f'Contato de {name}',
+                message,
+                email,
+                ['thpldevweb@gmail.com'],
+                fail_silently=False,
             )
-            messages.success(request, 'Sua mensagem foi enviada com sucesso!')
-            return redirect('contact')
+
+            return redirect('contact')  # Redireciona após o envio
     else:
         form = ContactForm()
 
     return render(request, 'contact.html', {'form': form})
 
-    return render(request, 'contact.html', {'form': form})
+
+def under_development(request):
+    return render(request, 'under_development.html')
