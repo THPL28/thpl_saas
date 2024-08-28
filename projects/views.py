@@ -49,7 +49,7 @@ def contact_view(request):
                 fail_silently=False,
             )
 
-            return redirect('contact')  # Redireciona após o envio
+        return redirect('contact')  # Redireciona após o envio
     else:
         form = ContactForm()
 

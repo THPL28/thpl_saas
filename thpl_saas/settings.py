@@ -98,15 +98,34 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Host
-
-
-ALLOWED_HOSTS = ['https://thpl-saas.onrender.com','thpl-saas.onrender.com','127.0.0.1','127.0.0.1:8000']
+ALLOWED_HOSTS = ['thpl-saas.onrender.com', '127.0.0.1']
 
 
 
+# logs
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
+# Email config
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # ou o servidor SMTP que você usa
+EMAIL_HOST = 'smtp.gmail.com'  #  servidor SMTP 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'thpldevweb@gmail.com'
@@ -116,7 +135,7 @@ DEFAULT_FROM_EMAIL =  'thpldevweb@gmail.com'
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -129,10 +148,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
