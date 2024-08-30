@@ -105,6 +105,7 @@
         }
 
         .about-section {
+            /* background-color: #222; */
             padding: 40px 0;
         }
 
@@ -118,7 +119,7 @@
         }
 
         .experience-section {
-            background-color: #222;
+            /* background-color: #222; */
             padding: 40px 0;
         }
 
@@ -246,9 +247,10 @@
     <!-- Seção Sobre -->
     <section class="about-section container">
         <h2>Sobre Mim</h2>
-        <p>Olá! Meu nome é Tiago Looze e sou um desenvolvedor apaixonado por Python, com especialização em automação RPA. Atualmente, estou cursando Ciência de Dados na UNIVESP, onde estou aprofundando meu conhecimento em análise e desenvolvimento de sistemas.</p>
-        <p>Tenho experiência no desenvolvimento de soluções de automação para otimizar processos, além de trabalhar com a criação de APIs e projetos orientados a objetos. 
-        Meu objetivo é sempre entregar projetos de alta qualidade, utilizando as melhores práticas e tecnologias.</p>
+  
+        <p>Meu nome é Tiago Looze e sou um desenvolvedor apaixonado por Python, com especialização em automação RPA. Atualmente, estou cursando Ciência de Dados na UNIVESP, onde estou aprofundando meu conhecimento em análise e desenvolvimento de sistemas.</p>
+        <p>Tenho experiência no desenvolvimento de soluções de automação para otimizar processos, além de trabalhar com a criação de APIs e projetos orientados a objetos.</p> 
+        <p>Meu objetivo é sempre entregar projetos de alta qualidade, utilizando as melhores práticas e tecnologias.</p>
     </section>
 
     <!-- Seção de Experiência -->
@@ -331,5 +333,16 @@
             </p>
         </div>
     </footer>
+    <script>
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            var navbar = document.querySelector('#navbarNav');
+            if (navbar.classList.contains('collapse')) {
+                navbar.classList.remove('collapse');
+            } else {
+                navbar.classList.add('collapse');
+            }
+    });
+
+    </script>
 </body>
 </html>

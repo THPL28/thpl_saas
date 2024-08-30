@@ -4,9 +4,9 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+   
     <title>Home</title>
+    <link rel="icon"  href="{% static 'images/thpl_logo.ico' %}" type="image/ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -25,14 +25,14 @@
         .navbar-brand:hover, .nav-link:hover {
             color: #1e90ff;
         }
-    /* Estilo para o ícone do menu hambúrguer */
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
+        /* Estilo para o ícone do menu hambúrguer */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
 
         /* Hero Section */
         .hero {
-            /* background: url('{% static "images/hero-bg.jpg" %}') no-repeat center center/cover; */
+            background: url('{% static "images/bg.png" %}') no-repeat center center/cover;
             color: white;
             padding: 100px 0;
             text-align: center;
@@ -126,6 +126,16 @@
             border-right: 0;
             margin-left: 0;
         }
+        .testimonial-card {
+            background-color: #1c1c1c;
+            border: none;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;    
+        }
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+
     </style>
 
     <!-- Navbar -->
@@ -156,6 +166,7 @@
 
     <!-- Hero Section -->
     <div class="hero">
+        
         <h1>Bem-vindo ao Meu Portfólio</h1>
         <p>Transforme tarefas repetitivas em soluções automatizadas com Python e RPA.</p>
             
@@ -223,58 +234,33 @@
             <!-- Adicione mais marcos conforme necessário -->
         </div>
     </div>
-<!-- Testemunhos Section -->
-<div class="container mt-5">
-    <h2 class="text-center">Testemunhos</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card testimonial-card">
-                <h5 class="card-title">Cliente 1</h5>
-                <p class="card-text">"O trabalho do Tiago foi excepcional. Ele conseguiu automatizar nossos processos com uma solução que superou nossas expectativas."</p>
+        <!-- Testemunhos Section -->
+    <div class="container mt-5 content-testm">
+        <h2 class="text-center">Testemunhos</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card testimonial-card">
+                    <br>
+                    <h5 class="card-title">Cliente 1</h5>
+                    <p class="card-text">"O trabalho do Tiago foi excepcional. <br>Ele conseguiu automatizar nossos processos com uma solução que superou nossas expectativas."</p><br>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card testimonial-card">
-                <h5 class="card-title">Cliente 2</h5>
-                <p class="card-text">"Os projetos apresentados são de alta qualidade e têm sido fundamentais para nossa operação. Altamente recomendável!"</p>
+            <div class="col-md-4">
+                <div class="card testimonial-card">
+                    <br>
+                    <h5 class="card-title">Cliente 2</h5>
+                    <p class="card-text">"Os projetos apresentados são de alta qualidade e têm sido fundamentais para nossa operação.  <br>Altamente recomendável!"</p> <br>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card testimonial-card">
-                <h5 class="card-title">Cliente 3</h5>
-                <p class="card-text">"Profissionalismo e eficiência são as palavras que definem o trabalho do Tiago. Sua abordagem para a resolução de problemas é admirável."</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Blog Section -->
-<!-- <div class="container mt-5">
-    <h2 class="text-center">Blog/Artigos</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card blog-card">
-                <h5 class="card-title">Como Iniciar com RPA</h5>
-                <p class="card-text">Neste artigo, exploro as etapas iniciais para começar com a automação de processos robóticos (RPA) usando Python.</p>
-                <a href="{% url 'blog_post_1' %}" class="btn btn-outline-primary">Leia mais</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card blog-card">
-                <h5 class="card-title">Visão Computacional com Python</h5>
-                <p class="card-text">Aprenda sobre técnicas e ferramentas para implementar visão computacional em projetos Python.</p>
-                <a href="{% url 'blog_post_2' %}" class="btn btn-outline-primary">Leia mais</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card blog-card">
-                <h5 class="card-title">Extraindo Dados de PDFs</h5>
-                <p class="card-text">Uma visão detalhada sobre como extrair informações úteis de documentos PDF com Python.</p>
-                <a href="{% url 'blog_post_3' %}" class="btn btn-outline-primary">Leia mais</a>
+            <div class="col-md-4">
+                <div class="card testimonial-card">
+                    <br>
+                    <h5 class="card-title">Cliente 3</h5>
+                    <p class="card-text">"Profissionalismo e eficiência são as palavras que definem o trabalho do Tiago.Sua abordagem para a resolução de problemas é admirável."</p> <br>
+                </div>
             </div>
         </div>
     </div>
-</div> -->
 
     <!-- Footer -->
     <footer class="footer py-3 mt-5">
