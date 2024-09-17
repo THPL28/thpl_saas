@@ -124,13 +124,14 @@ LOGGING = {
 
 # Email config
 
+# settings.py
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  #  servidor SMTP 
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'thpldevweb@gmail.com'
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL =  'thpldevweb@gmail.com'
+EMAIL_HOST_USER = 'tiago.looze28@gmail.com'  
+EMAIL_HOST_PASSWORD = 'bvmf ount zpfk tpoy'  
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

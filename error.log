@@ -5094,3 +5094,73 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 171: 'staticfiles'. Did you forget to register or load this tag?
 "GET / HTTP/1.1" 500 149124
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+"POST /contact/ HTTP/1.1" 500 67755
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+"POST /contact/ HTTP/1.1" 500 67750
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+"POST /contact/ HTTP/1.1" 500 67753
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+"POST /contact/ HTTP/1.1" 500 67753
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'recipient_list'
+"POST /contact/ HTTP/1.1" 500 67756
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'from_email'
+"POST /contact/ HTTP/1.1" 500 67755
+Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Tiago Looze\thpl_saas\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Tiago Looze\thpl_saas\projects\views.py", line 49, in contact_view
+    send_mail(
+TypeError: send_mail() missing 1 required positional argument: 'from_email'
+"POST /contact/ HTTP/1.1" 500 67755

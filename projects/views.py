@@ -1,6 +1,7 @@
 # projects/views.py
 
 from django.shortcuts import render, redirect
+from django.core.cache import cache
 import requests
 from django.core.mail import send_mail
 from .forms import ContactForm
@@ -9,20 +10,24 @@ from django.contrib import messages
 def home(request):
     return render(request, 'home.html')
 
-    
 def project_list(request):
-    username = 'THPL28'
-    url = f'https://api.github.com/users/{username}/repos'
+    repos = cache.get('repos')
     
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        repos = response.json()
-    except requests.RequestException as e:
-        repos = []
-        print(f"Erro ao buscar repositórios: {e}")
-
+    if repos is None:
+        username = 'THPL28'
+        url = f'https://api.github.com/users/{username}/repos'
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            repos = response.json()
+            cache.set('repos', repos, timeout=60*60)  # Cache por 1 hora
+        except requests.RequestException as e:
+            repos = []
+            print(f"Erro ao buscar repositórios: {e}")
+            messages.error(request, "Erro ao buscar os repositórios do GitHub.")
+    
     return render(request, 'projects/index.html', {'repos': repos})
+
 
 def about(request):
     # Adicione esta view para a página About
@@ -42,14 +47,14 @@ def contact_view(request):
 
             # Enviar e-mail
             send_mail(
-                f'Contato de {name}',
-                message,
-                email,
-                ['thpldevweb@gmail.com'],
-                fail_silently=False,
+                subject=f'Nova mensagem de {name}', 
+                message=message,    
+                from_email=email, 
+                recipient_list=['tiago.looze28@gmail.com'],  # Email de destino
+                fail_silently=False,  # Para exibir erros se ocorrerem
             )
-
-        return redirect('contact')  # Redireciona após o envio
+            messages.success(request, 'Mensagem enviada com sucesso!')
+            return redirect('contact')  # Redireciona para a página de contato após o envio
     else:
         form = ContactForm()
 
